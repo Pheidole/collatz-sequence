@@ -26,7 +26,7 @@ def collatzLoop():  # handles user input and loops through a full collatz sequen
         print(userNum)
         count += 1
         time.sleep(0.2)  # artificial delay
-    print('It took', count, 'iterations for', userNumOriginal, 'to reach 1.')
+    print('It took', count, 'iterations for the number you entered (' + userNumOriginal + ') to reach 1.')
 
 
 def main():  # handles branching user inputs
