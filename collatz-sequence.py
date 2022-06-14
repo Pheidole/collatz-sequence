@@ -1,21 +1,20 @@
-# Collatz Sequence
+# Collatz Sequence script
 import time
 import sys
 
 
 def collatzOperation(number):  # performs collatz evaluation and returns number
     if number % 2 == 0:
-        number = number // 2
+        return number // 2
     else:
-        number = number * 3 + 1
-    print(number)
-    return number
+        return number * 3 + 1
 
 
 def collatzLoop():  # handles user input and loops through a full collatz sequence
     count = 0  # keeps track of how many collatz iterations have passed
     while True:
         userNum = input('Enter an integer: ')
+        userNumOriginal = userNum
         try:
             userNum = int(userNum)
             break
@@ -24,9 +23,10 @@ def collatzLoop():  # handles user input and loops through a full collatz sequen
             continue
     while userNum != 1:
         userNum = collatzOperation(userNum)
+        print(userNum)
         count += 1
         time.sleep(0.2)  # artificial delay
-    print('It took', count, 'iterations for the number you entered to reach 1.')
+    print('It took', count, 'iterations for', userNumOriginal, 'to reach 1.')
 
 
 def main():  # handles branching user inputs
