@@ -3,7 +3,7 @@ import time
 import sys
 
 
-def collatz(number):  # performs collatz evaluation and returns number
+def collatzOperation(number):  # performs collatz evaluation and returns number
     if number % 2 == 0:
         number = number // 2
     else:
@@ -12,7 +12,7 @@ def collatz(number):  # performs collatz evaluation and returns number
     return number
 
 
-def userCollatz():  # handles user input and loops through a full collatz sequence
+def collatzLoop():  # handles user input and loops through a full collatz sequence
     count = 0  # keeps track of how many collatz iterations have passed
     while True:
         userNum = input('Enter an integer: ')
@@ -23,7 +23,7 @@ def userCollatz():  # handles user input and loops through a full collatz sequen
             print('Input must be an integer.')
             continue
     while userNum != 1:
-        userNum = collatz(userNum)
+        userNum = collatzOperation(userNum)
         count += 1
         time.sleep(0.2)  # artificial delay
     print('It took', count, 'iterations for the number you entered to reach 1.')
@@ -32,7 +32,7 @@ def userCollatz():  # handles user input and loops through a full collatz sequen
 def main():  # handles branching user inputs
     print('This program will perform the Collatz Sequence on any integer that you enter.')
     while True:
-        userCollatz()
+        collatzLoop()
         while True:  # play again decision loop
             playAgain = input('Would you like to play again?\n1. Yes \n2. No\n')
             try:
