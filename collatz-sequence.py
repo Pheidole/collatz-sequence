@@ -14,9 +14,9 @@ def collatzLoop():  # handles user input and loops through a full collatz sequen
     count = 0  # keeps track of how many collatz iterations have passed
     while True:
         userNum = input('Enter an integer: ')
-        userNumOriginal = userNum
         try:
             userNum = int(userNum)
+            userNumOriginal = userNum
             break
         except ValueError:
             print('Input must be an integer.')
@@ -26,7 +26,7 @@ def collatzLoop():  # handles user input and loops through a full collatz sequen
         print(userNum)
         count += 1
         time.sleep(0.2)  # artificial delay
-    print('It took', count, 'iterations for the number you entered (' + userNumOriginal + ') to reach 1.')
+    print('It took {0} iterations for the number you entered ({1}) to reach 1.'.format(count, userNumOriginal))
 
 
 def main():  # handles branching user inputs
